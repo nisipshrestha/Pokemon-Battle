@@ -1,13 +1,18 @@
-.search_container {
-  display: flex;
-  column-gap: 12px;
+.vs_block {
+  font-size: 24px;
+  justify-self: center;
+  align-self: center;
 }
+
 .search_wrapper {
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .search_box {
+  margin-top: 10px;
+  font-size: 20px;
   border-radius: 5px 5px 0 0;
   border: 1px solid #cdcdcd;
   padding: 8px 16px;
@@ -18,10 +23,18 @@
 }
 
 .data_list {
+  width: 100%;
+  position: absolute;
+  top: 100%;
   border: 1px solid #cdcdcd;
   border-radius: 0 0 5px 5px;
+  max-height: 300px;
+  overflow-y: scroll;
+
   .data_row {
-    padding: 0 16px;
+    padding: 4px 16px;
+    border: 1px solid #cdcdcd;
+    background-color: #fff;
 
     &:hover {
       background-color: #cdcdcd;

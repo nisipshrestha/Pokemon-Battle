@@ -1,9 +1,14 @@
 .app_container {
-  padding: 20px 40px;
   width: 100%;
-  border: 3px dashed red;
 }
 
-.vs_block {
-  align-self: center;
+.content_container {
+  margin-top: 20px;
+  border-radius: 10px;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: center;
+  min-height: calc(100vh - 10rem);
+
+  background-color: $common_bg_color;
 }

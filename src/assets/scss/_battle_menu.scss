@@ -1,0 +1,12 @@
+.battle_menu {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 0.25fr 1fr;
+  row-gap: 20px;
+  height: 100%;
+
+  h1 {
+    grid-column: 1 / span 3;
+    justify-self: center;
+  }
+}

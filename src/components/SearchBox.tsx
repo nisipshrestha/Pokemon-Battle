@@ -11,8 +11,8 @@ function SearchBox({
   isSearched,
 }: SearchBoxProps) {
   return (
-    <div className="search_wrapper">
-      <label>{label}</label>
+    <div className={"search_wrapper"}>
+      <h2>{label}</h2>
       <input
         name={name}
         value={value}

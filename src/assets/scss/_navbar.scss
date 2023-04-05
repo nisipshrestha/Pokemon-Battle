@@ -1,0 +1,38 @@
+.navbar {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: $common_bg_color;
+  border-radius: 10px;
+  width: 100%;
+  position: relative;
+  min-height: 70px;
+
+  .logo {
+    position: absolute;
+    width: 250px;
+  }
+
+  .menus {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    column-gap: 50px;
+
+    .menu_item {
+      font-size: 18px;
+      a {
+        &:hover {
+          outline: 5px solid #fff;
+          border-radius: 10px;
+          background-color: #fff;
+          color: $common_bg_color;
+        }
+        color: #000;
+      }
+    }
+  }
+}

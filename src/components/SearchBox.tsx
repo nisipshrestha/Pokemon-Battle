@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { Pokemon, SearchBoxProps } from "../types";
 
-type Pokemon = {
-  name: string;
-  url: string;
-};
 async function getList(setList: Function) {
   const response = await fetch(
     "https://pokeapi.co/api/v2/pokemon/?limit=1279&offset=0"
@@ -12,7 +9,7 @@ async function getList(setList: Function) {
   setList(results);
 }
 
-export const Counter: React.FC = () => {
+export const SearchBox: React.FC<SearchBoxProps> = ({ label }) => {
   const [pokemonList, setPokemonList] = useState<Pokemon[]>([]);
 
   useEffect(() => {
@@ -20,9 +17,9 @@ export const Counter: React.FC = () => {
   }, []);
   console.log(pokemonList);
   return (
-    <div className="search_Wrapper">
-      <label>Search</label>
-      <input type="search" name="data" role="combobox" />
+    <div className="search_wrapper">
+      <label>{label}</label>
+      <input type="search" name="data" />
       <datalist id="data" role="listbox">
         {pokemonList.map((pokemon) => (
           <option key={pokemon.name} value={pokemon.name} />

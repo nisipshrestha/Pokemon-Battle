@@ -1,30 +1,48 @@
-import React, { useEffect, useState } from "react";
-import { Pokemon, SearchBoxProps } from "../types";
+import { memo } from "react";
+import { SearchBoxProps } from "../types";
 
-async function getList(setList: Function) {
-  const response = await fetch(
-    "https://pokeapi.co/api/v2/pokemon/?limit=1279&offset=0"
-  );
-  const { results } = await response.json();
-  setList(results);
-}
-
-export const SearchBox: React.FC<SearchBoxProps> = ({ label }) => {
-  const [pokemonList, setPokemonList] = useState<Pokemon[]>([]);
-
-  useEffect(() => {
-    getList(setPokemonList);
-  }, []);
-  console.log(pokemonList);
+function SearchBox({
+  label,
+  name,
+  dataList = [],
+  value,
+  onSearch,
+  onChange,
+  isSearched,
+}: SearchBoxProps) {
   return (
     <div className="search_wrapper">
       <label>{label}</label>
-      <input type="search" name="data" />
-      <datalist id="data" role="listbox">
-        {pokemonList.map((pokemon) => (
-          <option key={pokemon.name} value={pokemon.name} />
-        ))}
-      </datalist>
+      <input
+        name={name}
+        value={value}
+        className="search_box"
+        onChange={(e) => onChange(e)}
+        type="search"
+        autoComplete="off"
+      />
+
+      {!isSearched && value && (
+        <div className="data_list">
+          {dataList.reduce(
+            (acc: any[], each: { name: string; url: string }) =>
+              each.name.startsWith(value)
+                ? acc.concat(
+                    <div
+                      onClick={() => onSearch(name, each.name)}
+                      className="data_row"
+                      key={each.name}
+                    >
+                      {each.name}
+                    </div>
+                  )
+                : acc,
+            []
+          )}
+        </div>
+      )}
     </div>
   );
-};
+}
+
+export default memo(SearchBox);

@@ -9,4 +9,10 @@ export type Pokemon = {
 
 export type SearchBoxProps = {
   label: string;
+  name: string;
+  value: string;
+  isSearched: boolean;
+  dataList: any[];
+  onSearch: Function;
+  onChange: Function;
 };

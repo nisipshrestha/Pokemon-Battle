@@ -1,9 +1,9 @@
 import { memo } from "react";
 
-function Pokemon({ data, name }: any) {
+function Pokemon({ data, name, isPokedex }: any) {
   return (
     data?.name && (
-      <div className={`pokemon_card ${name === "pokemonB" ? "card_2" : ""}`}>
+      <div className={`pokemon_card ${name}`}>
         {data?.stats?.[0]?.base_stat && (
           <div className="pokemon_title_wrapper">
             <div>
@@ -18,6 +18,18 @@ function Pokemon({ data, name }: any) {
         {data?.sprites?.front_default && (
           <div className="pokemon_image_wrapper">
             <img className="pokemon_image" src={data.sprites.front_default} />
+          </div>
+        )}
+
+        {isPokedex && (
+          <div className="moves">
+            <h2>Moves</h2>
+
+            <ul>
+              {data?.moves.slice(0, 4).map((each: any) => (
+                <li key={each?.move?.name}>{each?.move?.name}</li>
+              ))}
+            </ul>
           </div>
         )}
       </div>

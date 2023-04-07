@@ -1,43 +1,39 @@
-.vs_block {
-  font-size: 24px;
-  justify-self: center;
-  align-self: center;
-}
-
 .search_wrapper {
+  width: 100%;
   display: flex;
   flex-direction: column;
   position: relative;
+  &.pokemonA {
+    grid-area: pokemonA;
+  }
+  &.pokemonB {
+    grid-area: pokemonB;
+  }
 }
 
 .search_box {
   margin-top: 10px;
   font-size: 20px;
-  border-radius: 5px 5px 0 0;
-  border: 1px solid #cdcdcd;
+  border: 1px solid $primary;
   padding: 8px 16px;
   outline: none;
-  &[value=""] {
-    border-radius: 5px;
-  }
 }
 
 .data_list {
   width: 100%;
   position: absolute;
   top: 100%;
-  border: 1px solid #cdcdcd;
-  border-radius: 0 0 5px 5px;
+  border: 1px solid $primary;
   max-height: 300px;
   overflow-y: scroll;
 
   .data_row {
     padding: 4px 16px;
-    border: 1px solid #cdcdcd;
-    background-color: #fff;
-
+    border: 1px solid $primary;
+    background-color: $light;
+    color: $dark;
     &:hover {
-      background-color: #cdcdcd;
+      background-color: $primary;
     }
   }
 }

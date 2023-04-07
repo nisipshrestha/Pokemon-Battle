@@ -11,9 +11,10 @@ function SearchBox({
   isSearched,
 }: SearchBoxProps) {
   return (
-    <div className={"search_wrapper"}>
+    <div className={`search_wrapper ${name}`}>
       <h2>{label}</h2>
       <input
+        placeholder="Type here ..."
         name={name}
         value={value}
         className="search_box"

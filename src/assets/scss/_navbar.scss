@@ -1,37 +1,38 @@
 .navbar {
-  margin-top: 20px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 10px 20px;
-  background-color: $common_bg_color;
-  border-radius: 10px;
-  width: 100%;
   position: relative;
-  min-height: 70px;
-
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
   .logo {
-    position: absolute;
-    width: 250px;
+    max-width: 100%;
   }
+  ul {
+    display: grid;
+    gap: 20px;
+    list-style: none;
+    grid-template-columns: repeat(4, 1fr);
 
-  .menus {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    list-style-type: none;
-    column-gap: 50px;
-
-    .menu_item {
-      font-size: 18px;
+    li {
+      background-color: rgba($dark, 0.9);
       a {
-        &:hover {
-          outline: 5px solid #fff;
-          border-radius: 10px;
-          background-color: #fff;
-          color: $common_bg_color;
+        box-shadow: $shadow;
+        padding: 0.8rem;
+        text-align: center;
+        color: $light;
+        display: block;
+        text-transform: uppercase;
+        font-size: 1.1rem;
+        text-decoration: none;
+        &.active {
+          color: $secondary;
         }
-        color: #000;
+        &:hover {
+          span {
+            border-bottom: 1px solid $secondary;
+          }
+        }
       }
     }
   }

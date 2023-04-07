@@ -1,0 +1,82 @@
+.battle_menu {
+  h1 {
+    font-size: 3rem;
+  }
+  display: grid;
+  gap: 20px;
+  grid-template-areas:
+    ". heading1 . "
+    "pokemonA . pokemonB"
+    "pokeCardA vs pokeCardB"
+    "answerArea answerArea answerArea"
+    "resultArea resultArea resultArea"
+    ". newMatch .";
+
+  .vs_block {
+    grid-area: vs;
+    font-size: 5rem;
+    justify-self: center;
+    align-self: center;
+  }
+
+  .heading1 {
+    grid-area: heading1;
+  }
+  .heading2 {
+    text-align: center;
+    grid-area: heading2;
+  }
+  .answer_area {
+    grid-area: answerArea;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 16px;
+    .submitA,
+    .submitB {
+      &.active {
+        background-color: green;
+      }
+      border-radius: 50%;
+      background-color: $dark;
+      font-size: 20px;
+      grid-area: submit;
+      padding: 8px 16px;
+      border: 1px solid $secondary;
+      color: $secondary;
+      &:hover {
+        background-color: lighten($dark, 20%);
+      }
+    }
+  }
+
+  .result_area {
+    grid-area: resultArea;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 16px;
+
+    & i {
+      background-color: $dark;
+      border-radius: 50%;
+      padding: 8px 16px;
+      border: 1px solid $secondary;
+      &.active {
+        background-color: green;
+      }
+    }
+  }
+
+  .new_match_btn {
+    grid-area: newMatch;
+    background-color: $dark;
+    font-size: 20px;
+    padding: 8px 16px;
+    border: 1px solid $secondary;
+    color: $secondary;
+    &:hover {
+      background-color: lighten($dark, 20%);
+    }
+  }
+}

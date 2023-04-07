@@ -1,0 +1,61 @@
+.pokemon_card {
+  color: $dark;
+  padding: 10px 20px;
+  border: 1px solid $primary;
+  background-color: $light;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &.pokemonA {
+    grid-area: pokeCardA;
+  }
+  &.pokemonB {
+    grid-area: pokeCardB;
+  }
+
+  .pokemon_title_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .pokemon_title {
+      text-transform: capitalize;
+    }
+
+    .pokemon_stat_wrapper {
+      display: flex;
+      .hp_text {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .pokemon_image_wrapper {
+    background-color: $secondary;
+    border-radius: 50%;
+    width: 140px;
+    height: 140px;
+    overflow: hidden;
+    .pokemon_image {
+      height: auto;
+      width: 140px;
+    }
+  }
+
+  .moves {
+    h2 {
+      text-align: center;
+    }
+    ul {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      list-style: none;
+      gap: 5px;
+      li {
+        padding: 5px 10px;
+        text-align: center;
+        border: 1px solid $dark;
+      }
+    }
+  }
+}

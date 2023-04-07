@@ -1,0 +1,21 @@
+.battleHistory {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  .history_row {
+    padding: 8px 16px;
+    &.label {
+      font-size: 24px;
+    }
+    border: 1px solid $secondary;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2rem;
+    text-align: center;
+  }
+}
